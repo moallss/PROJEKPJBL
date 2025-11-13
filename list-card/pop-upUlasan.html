@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulasan Rumah Adat</title>
+    <link rel="stylesheet" href="pop-upUlasan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="modal-overlay">
+        <!-- Wrapper Utama dengan Border-radius Konsisten -->
+        <div class="modal-container">
+            <!-- Header (tidak di-scroll) -->
+            <div class="modal-header">
+                <h2 class="modal-title">Ulasan & Rating Konten Budaya</h2>
+                <button class="close-button" aria-label="Tutup modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Konten yang Bisa di-Scroll -->
+            <div class="modal-content">
+                <div class="divider"></div>
+                
+                <div class="overall-rating">
+                    <div class="rating-number">4.5</div>
+                    <div class="stars-container">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="max-rating">5.0</span>
+                    </div>
+                </div>
+                
+                <div class="rating-distribution">
+                    <div class="rating-bar">
+                        <span class="star-label">5 star</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <span class="review-count">2</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="star-label">4 star</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <span class="review-count">2</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="star-label">3 star</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="review-count">0</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="star-label">2 star</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="review-count">0</span>
+                    </div>
+                    <div class="rating-bar">
+                        <span class="star-label">1 star</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                        <span class="review-count">0</span>
+                    </div>
+                </div>
+                
+                <button class="write-review-btn">
+                    <i class="fas fa-plus"></i> Tulis Ulasan
+                </button>
+                
+                <div class="reviews-container">
+                    <div class="review-item">
+                        <div class="user-avatar">DC</div>
+                        <div class="review-content">
+                            <div class="user-info">
+                                <div class="user-name">David Chan</div>
+                                <div class="review-time">3 week ago</div>
+                            </div>
+                            <p class="review-text">Desain arsitekturnya sangat simbolis dan penuh makna, bukan sekadar estetika.</p>
+                            <div class="user-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="like-container">
+                                <button class="like-btn">
+                                    <i class="far fa-thumbs-up"></i> 10
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="review-divider"></div>
+                    
+                    <div class="review-item">
+                        <div class="user-avatar">SJ</div>
+                        <div class="review-content">
+                            <div class="user-info">
+                                <div class="user-name">Sarah Jhonson</div>
+                                <div class="review-time">1 month ago</div>
+                            </div>
+                            <p class="review-text">Setiap ukiran memiliki cerita yang mendalam tentang kehidupan masyarakat adat setempat. Sangat menginspirasi!</p>
+                            <div class="user-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="like-container">
+                                <button class="like-btn">
+                                    <i class="far fa-thumbs-up"></i> 8
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

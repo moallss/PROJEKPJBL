@@ -1,0 +1,638 @@
+/* ===== BASE STYLES ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    padding-top: 72px;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ===== SITE HEADER ===== */
+.site-header {
+    background-color: #5a1919;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.18s ease;
+}
+
+/* ===== CONTAINER LAYOUT ===== */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 80px;
+    height: 100%;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* ===== BRAND LOGO ===== */
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff;
+    transition: all 0.18s ease;
+}
+
+.brand-icon {
+    display: block;
+    width: 120px;
+    height: 70px;
+    object-fit: contain;
+}
+
+/* ===== MAIN NAVIGATION ===== */
+.main-nav {
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav a {
+    position: relative;
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: 0.6px;
+    padding: 8px 0;
+    transition: all 0.18s ease;
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+/* ===== ACTIONS CONTAINER ===== */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* ===== SEARCH FORM ===== */
+.search {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 15px;
+    height: 38px;
+    overflow: hidden;
+    transition: all 0.18s ease;
+}
+
+.search:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.search input {
+    border: none;
+    outline: none;
+    padding: 0 16px;
+    height: 100%;
+    width: 230px;
+    font-size: 14px;
+    background: transparent;
+    color: #222222;
+    transition: all 0.18s ease;
+}
+
+.search input::placeholder {
+    color: #808080;
+}
+
+.search-btn,
+.search-clear {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.18s ease;
+}
+
+.search-btn {
+    color: #222222;
+    padding: 0 12px;
+}
+
+.search-clear {
+    color: #808080;
+    height: 100%;
+    font-size: 12px;
+    opacity: 0;
+    pointer-events: none;
+    padding: 0 8px;
+}
+
+.search-btn svg,
+.search-clear svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.search input:not(:placeholder-shown) + .search-clear {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== PAGE CONTENT STYLES ===== */
+.main-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 40px 80px 80px;
+}
+
+/* ===== PAGE HEADER ===== */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative;
+    z-index: 100; /* Ensure dropdowns appear above cards */
+}
+
+.page-title {
+    font-family: 'Times New Roman', serif;
+    font-size: 28px;
+    color: #c00000;
+    margin: 0;
+    text-align: left;
+    flex: 1;
+    min-width: 250px;
+}
+
+/* ===== DROPDOWN CONTAINER ===== */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* ===== DROPDOWN TOGGLE BUTTONS ===== */
+.dropdown-toggle {
+    background-color: #7a1c2e;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+    border: none;
+    box-shadow: 0 2px 4px rgba(122, 28, 46, 0.2);
+}
+
+.dropdown-toggle:hover {
+    background-color: #631624;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(122, 28, 46, 0.3);
+}
+
+/* ===== DROPDOWN MENU ===== */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px); /* 8px gap to prevent overlap */
+    right: 0;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px; /* Border radius konsisten di semua sudut */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    min-width: 160px; /* Lebih sempit */
+    z-index: 1002; /* Higher than page-header z-index */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px) scale(0.95);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 5px;
+    overflow: hidden; /* Pastikan border radius tetap terlihat */
+}
+
+.dropdown-menu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+    animation: dropdownSlide 0.2s ease forwards;
+}
+
+@keyframes dropdownSlide {
+    from {
+        transform: translateY(-10px) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===== DROPDOWN ITEMS ===== */
+.dropdown-item {
+    padding: 8px 15px; /* Dikurangi dari 12px menjadi 8px */
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #7a1c2e;
+    transform: translateX(2px);
+}
+
+.dropdown-item.active {
+    background-color: #7a1c2e;
+    color: white;
+}
+
+/* ===== DROPDOWN ICON ===== */
+.dropdown-icon {
+    margin-left: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-icon svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+}
+
+.dropdown-toggle:hover .dropdown-icon svg {
+    fill: #ffb300; /* Golden accent on hover */
+}
+
+/* ===== CARD GRID ANIMATION ===== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 50px;
+    position: relative;
+    z-index: 1; /* Lower than dropdown z-index */
+    transition: margin-top 0.3s ease; /* Smooth animation for card movement */
+}
+
+/* Animation state when dropdown is active */
+.card-grid.dropdown-active {
+    margin-top: 180px; /* Default space, will be overridden by JS */
+    transition: margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== CARD STYLES (REVISI) ===== */
+.cultural-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cultural-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* IMAGE: gunakan full width container agar grid tidak terdistorsi */
+.card-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.cultural-card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+/* CARD CONTENT: jangan pakai fixed height; gunakan flex column
+   dan biarkan footer 'mendorong' ke bawah dengan margin-top: auto */
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Left section: Text content area (title and description) */
+.card-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-title {
+    color: #7a1c2e;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.card-description {
+    color: #555;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+    margin: 0;
+    font-size: 0.8125rem;
+}
+
+.card-footer {
+    margin-top: auto !important;
+    padding-top: 8px !important;
+    padding-bottom: 7px !important;
+    position: static !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* Rating tetap di kiri */
+.card-rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.star-rating {
+    color: #ffb300;
+    font-size: 16px;
+}
+
+.rating-value {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ACTIONS: tombol sejajar horizontal */
+.card-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* TOMBOL: ukuran seragam dan tidak terlalu panjang */
+.action-btn {
+    flex: 0 0 auto;
+    width: 72px;
+    height: 34px;
+    padding: 0 8px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* varian warna tombol */
+.read-btn { background-color: #7a1c2e; color: #fff; }
+.review-btn { background-color: #e9ecef; color: #7a1c2e; }
+
+.action-btn:hover {
+    opacity: 0.9;
+}
+
+/* ===== FIX: SEMBUNYIKAN ICON CLEAR BAWAAN BROWSER ===== */
+input[type="search"]::-webkit-search-cancel-button {
+-webkit-appearance: none;
+appearance: none;
+display: none;
+}
+
+input[type="search"]::-ms-clear {
+display: none;
+}
+
+input[type="search"]::-moz-search-cancel-button {
+display: none;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Tablet Landscape */
+@media (max-width: 920px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .main-nav ul {
+        gap: 25px;
+    }
+    
+    .search input {
+        width: 180px;
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 680px) {
+    .main-nav {
+        display: none;
+    }
+    
+    .search input {
+        width: 120px;
+    }
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card-grid.dropdown-active {
+        margin-top: 220px; /* Higher for tablet */
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    body {
+        padding-top: 72px;
+    }
+    
+    .site-header {
+        height: 72px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+    
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-controls {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .dropdown-container {
+        width: calc(50% - 5px);
+    }
+    
+    .dropdown-toggle {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .dropdown-menu {
+        width: 100%;
+        min-width: auto;
+        right: 0;
+    }
+    
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .card-grid.dropdown-active {
+        margin-top: 250px; /* Higher for mobile */
+    }
+    
+    .main-content {
+        padding: 40px 20px 80px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .site-header {
+        height: 60px;
+    }
+    
+    body {
+        padding-top: 60px;
+    }
+    
+    .brand-icon {
+        width: 100px;
+        height: 50px;
+    }
+    
+    .actions {
+        gap: 16px;
+    }
+    
+    .main-content {
+        padding: 30px 20px 60px;
+    }
+    
+    .page-title {
+        font-size: 24px;
+    }
+    
+    .dropdown-container {
+        width: 100%;
+    }
+    
+    .dropdown-toggle,
+    .dropdown-toggle {
+        padding: 6px 12px;
+        font-size: 13px;
+    }
+    
+    .card-grid.dropdown-active {
+        margin-top: 300px; /* Highest for small mobile */
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .card-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn {
+        width: 100%;
+    }
+}

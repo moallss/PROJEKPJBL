@@ -1,0 +1,302 @@
+/* Reset dasar dan box sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya dasar body */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    /* Scroll otomatis di mobile, nonaktif di desktop */
+    overflow-y: auto;
+}
+
+/* Kontainer utama login */
+.login-container {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 500px;
+    /* Hapus shadow sesuai permintaan */
+}
+
+/* Kolom kiri: Ilustrasi SVG */
+.login-illustration {
+    flex: 1;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.illustration-svg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
+/* Kolom kanan: Form login */
+.login-form {
+    flex: 1;
+    padding: 40px 35px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Judul form */
+.form-title {
+    color: #C00000;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Subjudul form */
+.form-subtitle {
+    color: #333333;
+    font-family: 'Garamond', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    word-wrap: break-word;
+}
+
+/* Grup input */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-label {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Wrapper input dengan ikon */
+.input-wrapper {
+    position: relative;
+}
+
+/* Input field umum */
+.input-field {
+    width: 100%;
+    padding: 12px 40px 12px 15px; /* Ruang untuk ikon di kanan */
+    background-color: #F5F5F5;
+    border: 1px solid #D0D0D0;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: #7A1C2E;
+}
+
+/* Tombol toggle password */
+.toggle-password {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.toggle-password:hover .eye-icon {
+    color: #7A1C2E;
+}
+
+/* Ikon mata */
+.eye-icon {
+    width: 20px;
+    height: 20px;
+    color: #555;
+    transition: color 0.2s;
+}
+
+/* Tombol clear username */
+.clear-username {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.clear-username:hover .clear-icon {
+    color: #7A1C2E;
+}
+
+/* Ikon clear */
+.clear-icon {
+    width: 20px;
+    height: 20px;
+    color: #555;
+    transition: color 0.2s;
+}
+
+/* Nonaktifkan ikon bawaan browser */
+/* Untuk Microsoft Edge */
+input[type="password"]::-ms-reveal {
+    display: none !important;
+}
+
+/* Untuk Chrome dan browser berbasis WebKit */
+input[type="password"]::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+/* Tombol login */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #7A1C2E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    background-color: #6A1426;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVITAS */
+/* Tablet: Tampilan vertikal */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+        max-width: 100%;
+        min-height: auto;
+    }
+
+    .login-illustration {
+        flex: none;
+        padding: 20px;
+        order: -1; /* Logo di atas form */
+    }
+
+    .illustration-svg {
+        max-width: 200px;
+    }
+
+    .login-form {
+        padding: 30px 20px;
+    }
+
+    .form-title {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .form-subtitle {
+        font-size: 14px;
+        text-align: center;
+    }
+    
+    /* Sesuaikan padding input di tablet */
+    .input-field {
+        padding: 12px 40px 12px 15px;
+    }
+}
+
+/* Mobile: Optimasi untuk layar kecil */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        /* Pastikan scroll aktif di mobile */
+        overflow-y: auto;
+    }
+
+    .login-container {
+        border-radius: 0;
+    }
+
+    .illustration-svg {
+        max-width: 150px;
+    }
+
+    .login-form {
+        padding: 20px 15px;
+    }
+
+    .form-title {
+        font-size: 24px;
+    }
+
+    .form-subtitle {
+        font-size: 13px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+    }
+
+    /* Sesuaikan posisi ikon di mobile */
+    .toggle-password,
+    .clear-username {
+        right: 10px;
+    }
+
+    .btn-login {
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+/* NONAKTIFKAN SCROLL DI DESKTOP */
+@media (min-width: 769px) {
+    body {
+        overflow: hidden; /* Nonaktifkan scroll di desktop */
+    }
+}

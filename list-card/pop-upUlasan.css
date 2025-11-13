@@ -1,0 +1,320 @@
+/* Reset dasar dan font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f0f2f5;
+    color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Overlay background (tidak diubah) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Wrapper Utama dengan Border-radius Konsisten */
+.modal-container {
+    background-color: #ffffff;
+    border-radius: 16px; /* Radius konsisten di 4 sudut */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    overflow: hidden; /* KUNCI: pastikan radius tidak terpotong */
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh; /* Batas tinggi maksimal */
+}
+
+/* Header (tidak di-scroll) */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0; /* Pastikan header tidak menyusut */
+    z-index: 10;
+    background-color: white; /* Pastikan header tidak transparan saat scroll */
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #4a4a4a;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    padding: 2px;
+}
+
+.close-button:hover {
+    color: #8b0000;
+    background-color: rgba(139, 0, 0, 0.1);
+}
+
+/* Garis pemisah (tidak diubah) */
+.divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 16px 0;
+}
+
+/* Konten yang Bisa di-Scroll - SOLUSI UTAMA */
+.modal-content {
+    overflow-y: auto; /* Scroll hanya di bagian konten */
+    max-height: calc(90vh - 70px); /* Sesuaikan dengan tinggi header */
+    padding: 0 24px 24px; /* Padding internal */
+    flex: 1; /* Isi ruang yang tersedia */
+}
+
+/* Rating utama - UKURAN DIPERKECIL */
+.overall-rating {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 8px 0 16px;
+}
+
+.rating-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #8b0000;
+    line-height: 1;
+}
+
+.stars-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.stars-container i {
+    color: #ffa500;
+    font-size: 16px;
+}
+
+.max-rating {
+    color: #888888;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+/* Distribusi rating */
+.rating-distribution {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 16px;
+}
+
+.rating-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    height: 20px;
+}
+
+.star-label {
+    font-size: 12px;
+    color: #4a4a4a;
+    width: 50px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 5px;
+    background-color: #e0e0e0;
+    border-radius: 2.5px;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #ffa500;
+    border-radius: 2.5px;
+}
+
+.review-count {
+    font-size: 12px;
+    font-weight: 500;
+    color: #1a1a1a;
+    width: 20px;
+    text-align: right;
+}
+
+/* Tombol tulis ulasan - POSISI KIRI */
+.write-review-btn {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 20px; /* MARGIN KIRI TETAP 20px */
+    align-self: flex-start;
+}
+
+.write-review-btn:hover {
+    background-color: #7a0000;
+}
+
+.write-review-btn i {
+    font-size: 13px;
+}
+
+/* Container ulasan */
+.reviews-container {
+    margin-top: 16px;
+}
+
+/* Item ulasan individual */
+.review-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.user-avatar {
+    width: 28px;
+    height: 28px;
+    background-color: #8b0000;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 11px;
+    flex-shrink: 0;
+}
+
+.review-content {
+    flex: 1;
+}
+
+.user-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.review-time {
+    font-size: 11px;
+    color: #888888;
+}
+
+.review-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin: 6px 0;
+}
+
+.user-rating {
+    color: #ffa500;
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.like-container {
+    margin-top: 6px;
+}
+
+.like-btn {
+    background: none;
+    border: none;
+    color: #888888;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 2px 4px;
+}
+
+.like-btn:hover {
+    color: #007bff;
+}
+
+.review-divider {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 0 48px;
+}
+
+/* RESPONSIF */
+@media (max-width: 768px) {
+    .modal-container {
+        max-width: 95%;
+        max-height: 95vh;
+        border-radius: 16px;
+    }
+    
+    .modal-content {
+        max-height: calc(95vh - 70px);
+    }
+    
+    .overall-rating {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .rating-number {
+        font-size: 28px;
+    }
+    
+    .write-review-btn {
+        margin-left: 0;
+        margin: 10px auto;
+    }
+    
+    .review-divider {
+        margin: 0 16px;
+    }
+}
