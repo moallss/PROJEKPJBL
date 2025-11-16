@@ -1,4 +1,7 @@
-/* ===== BASE STYLES ===== */
+/* =========================================== */
+/* BASE STYLES - Global reset and typography */
+/* Penjelasan: Reset box-sizing dan definisi font dasar. Untuk pemula: Ini memastikan konsistensi antar browser. */
+/* =========================================== */
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -6,13 +9,17 @@
 body {
     margin: 0;
     font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    padding-top: 72px;
+    padding-top: 4.5rem; /* 72px → 4.5rem */
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
 }
 
-/* ===== SITE HEADER ===== */
+/* =========================================== */
+/* SITE HEADER - Fixed header styling */
+/* Penjelasan: Header tetap dengan shadow. Untuk pemula: Position fixed menjaganya di atas saat scroll. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .site-header {
     background-color: #5a1919;
     color: #ffffff;
@@ -20,17 +27,21 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 72px;
+    height: 4.5rem; /* 72px → 4.5rem */
     z-index: 1000;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1); /* 2px/6px → rem */
     transition: all 0.18s ease;
 }
 
-/* ===== CONTAINER LAYOUT ===== */
+/* =========================================== */
+/* CONTAINER LAYOUT - Main container */
+/* Penjelasan: Container utama dengan max-width. Untuk pemula: Auto margin untuk centering. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .container {
-    max-width: 1440px;
+    max-width: 90rem; /* 1440px → 90rem */
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 0 5rem; /* 80px → 5rem */
     height: 100%;
 }
 
@@ -41,7 +52,11 @@ body {
     height: 100%;
 }
 
-/* ===== BRAND LOGO ===== */
+/* =========================================== */
+/* BRAND LOGO - Logo styling */
+/* Penjelasan: Link logo dengan transisi. Untuk pemula: Object-fit untuk gambar responsive. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .brand {
     display: flex;
     align-items: center;
@@ -52,20 +67,24 @@ body {
 
 .brand-icon {
     display: block;
-    width: 120px;
-    height: 70px;
+    width: 7.5rem; /* 120px → 7.5rem */
+    height: 4.375rem; /* 70px → 4.375rem */
     object-fit: contain;
 }
 
-/* ===== MAIN NAVIGATION ===== */
+/* =========================================== */
+/* MAIN NAVIGATION - Nav links */
+/* Penjelasan: Flex list dengan hover effect. Untuk pemula: Pseudo-element untuk underline animasi. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .main-nav {
     margin-left: auto;
-    margin-right: 45px;
+    margin-right: 2.8125rem; /* 45px → 2.8125rem */
 }
 
 .main-nav ul {
     display: flex;
-    gap: 35px;
+    gap: 2.1875rem; /* 35px → 2.1875rem */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -77,19 +96,19 @@ body {
     color: #ffffff;
     text-decoration: none;
     font-weight: 700;
-    font-size: 17px;
-    letter-spacing: 0.6px;
-    padding: 8px 0;
+    font-size: 1.0625rem; /* 17px → 1.0625rem */
+    letter-spacing: 0.0375rem; /* 0.6px → 0.0375rem */
+    padding: 0.5rem 0; /* 8px → 0.5rem */
     transition: all 0.18s ease;
 }
 
 .main-nav a::after {
     content: '';
     position: absolute;
-    bottom: -1px;
+    bottom: -0.0625rem; /* -1px → -0.0625rem */
     left: 0;
     width: 0;
-    height: 2px;
+    height: 0.125rem; /* 2px → 0.125rem */
     background-color: #ffffff;
     transition: width 0.3s ease;
 }
@@ -97,7 +116,7 @@ body {
 .main-nav a:hover,
 .main-nav a.active {
     opacity: 0.9;
-    transform: translateY(-2px);
+    transform: translateY(-0.125rem); /* -2px → -0.125rem */
 }
 
 .main-nav a:hover::after,
@@ -105,35 +124,43 @@ body {
     width: 100%;
 }
 
-/* ===== ACTIONS CONTAINER ===== */
+/* =========================================== */
+/* ACTIONS CONTAINER - Search and actions */
+/* Penjelasan: Flex untuk alignment actions. Untuk pemula: Gap untuk spasi antar elemen. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .actions {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 1.5rem; /* 24px → 1.5rem */
 }
 
-/* ===== SEARCH FORM ===== */
+/* =========================================== */
+/* SEARCH FORM - Search input and buttons */
+/* Penjelasan: Flex search bar dengan hover shadow. Untuk pemula: ::placeholder untuk teks placeholder. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .search {
     display: flex;
     align-items: center;
     background: white;
-    border-radius: 15px;
-    height: 38px;
+    border-radius: 0.9375rem; /* 15px → 0.9375rem */
+    height: 2.375rem; /* 38px → 2.375rem */
     overflow: hidden;
     transition: all 0.18s ease;
 }
 
 .search:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.15); /* 2px/8px → rem */
 }
 
 .search input {
     border: none;
     outline: none;
-    padding: 0 16px;
+    padding: 0 1rem; /* 16px → 1rem */
     height: 100%;
-    width: 230px;
-    font-size: 14px;
+    width: 14.375rem; /* 230px → 14.375rem */
+    font-size: 0.875rem; /* 14px → 0.875rem */
     background: transparent;
     color: #222222;
     transition: all 0.18s ease;
@@ -157,22 +184,22 @@ body {
 
 .search-btn {
     color: #222222;
-    padding: 0 12px;
+    padding: 0 0.75rem; /* 12px → 0.75rem */
 }
 
 .search-clear {
     color: #808080;
     height: 100%;
-    font-size: 12px;
+    font-size: 0.75rem; /* 12px → 0.75rem */
     opacity: 0;
     pointer-events: none;
-    padding: 0 8px;
+    padding: 0 0.5rem; /* 8px → 0.5rem */
 }
 
 .search-btn svg,
 .search-clear svg {
-    width: 18px;
-    height: 18px;
+    width: 1.125rem; /* 18px → 1.125rem */
+    height: 1.125rem;
     fill: currentColor;
 }
 
@@ -181,83 +208,102 @@ body {
     pointer-events: auto;
 }
 
-/* ===== PAGE CONTENT STYLES ===== */
+/* =========================================== */
+/* PAGE CONTENT STYLES - Main content area */
+/* Penjelasan: Padding untuk konten utama. Untuk pemula: Max-width untuk batas lebar. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .main-content {
-    max-width: 1440px;
+    max-width: 90rem; /* 1440px → 90rem */
     margin: 0 auto;
-    padding: 40px 80px 80px;
+    padding: 2.5rem 5rem 5rem; /* 40px/80px/80px → rem */
 }
 
-/* ===== PAGE HEADER ===== */
+/* =========================================== */
+/* PAGE HEADER - Title and filters */
+/* Penjelasan: Flex untuk judul dan kontrol. Untuk pemula: Z-index untuk layer di atas kartu. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem; /* 30px → 1.875rem */
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25rem; /* 20px → 1.25rem */
     position: relative;
-    z-index: 100; /* Ensure dropdowns appear above cards */
+    z-index: 100;
 }
 
 .page-title {
     font-family: 'Times New Roman', serif;
-    font-size: 28px;
+    font-size: 1.75rem; /* 28px → 1.75rem */
     color: #c00000;
     margin: 0;
     text-align: left;
     flex: 1;
-    min-width: 250px;
+    min-width: 15.625rem; /* 250px → 15.625rem */
 }
 
-/* ===== DROPDOWN CONTAINER ===== */
+/* =========================================== */
+/* DROPDOWN CONTAINER - Dropdown wrapper */
+/* Penjelasan: Position relative untuk menu absolute. Untuk pemula: Inline-block untuk flow normal. */
+/* =========================================== */
 .dropdown-container {
     position: relative;
     display: inline-block;
 }
 
-/* ===== DROPDOWN TOGGLE BUTTONS ===== */
+/* =========================================== */
+/* DROPDOWN TOGGLE BUTTONS - Toggle buttons */
+/* Penjelasan: Button dengan shadow dan transisi. Untuk pemula: Flex untuk align teks dan icon. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .dropdown-toggle {
     background-color: #7a1c2e;
     color: #ffffff;
     border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    padding: 0.5rem 1rem; /* 8px/16px → rem */
+    border-radius: 0.25rem; /* 4px → 0.25rem */
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px → 0.875rem */
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem; /* 8px → 0.5rem */
     transition: all 0.2s ease;
     border: none;
-    box-shadow: 0 2px 4px rgba(122, 28, 46, 0.2);
+    box-shadow: 0 0.125rem 0.25rem rgba(122, 28, 46, 0.2); /* 2px/4px → rem */
 }
 
 .dropdown-toggle:hover {
     background-color: #631624;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(122, 28, 46, 0.3);
+    transform: translateY(-0.0625rem); /* -1px → -0.0625rem */
+    box-shadow: 0 0.25rem 0.5rem rgba(122, 28, 46, 0.3); /* 4px/8px → rem */
 }
 
-/* ===== DROPDOWN MENU ===== */
+/* =========================================== */
+/* DROPDOWN MENU - Dropdown menu styling */
+/* Penjelasan: Menu absolute dengan animasi show. Untuk pemula: Transition untuk smooth open. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .dropdown-menu {
     position: absolute;
-    top: calc(100% + 8px); /* 8px gap to prevent overlap */
+    top: calc(100% + 0.5rem); /* 8px → 0.5rem */
     right: 0;
     background: white;
     border: 1px solid #e0e0e0;
-    border-radius: 8px; /* Border radius konsisten di semua sudut */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    min-width: 160px; /* Lebih sempit */
-    z-index: 1002; /* Higher than page-header z-index */
+    border-radius: 0.5rem; /* 8px → 0.5rem */
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15); /* 8px/24px → rem */
+    min-width: 10rem; /* 160px → 10rem */
+    z-index: 1002;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px) scale(0.95);
+    transform: translateY(-0.625rem) scale(0.95); /* -10px → -0.625rem */
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-top: 5px;
-    overflow: hidden; /* Pastikan border radius tetap terlihat */
+    margin-top: 0.3125rem; /* 5px → 0.3125rem */
+    overflow: hidden;
 }
 
 .dropdown-menu.show {
@@ -269,7 +315,7 @@ body {
 
 @keyframes dropdownSlide {
     from {
-        transform: translateY(-10px) scale(0.95);
+        transform: translateY(-0.625rem) scale(0.95);
         opacity: 0;
     }
     to {
@@ -278,23 +324,27 @@ body {
     }
 }
 
-/* ===== DROPDOWN ITEMS ===== */
+/* =========================================== */
+/* DROPDOWN ITEMS - Menu items */
+/* Penjelasan: Item dengan hover transform. Untuk pemula: Flex untuk align jika ada icon. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .dropdown-item {
-    padding: 8px 15px; /* Dikurangi dari 12px menjadi 8px */
+    padding: 0.5rem 0.9375rem; /* 8px/15px → rem */
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px → 0.875rem */
     color: #333;
     transition: all 0.15s ease;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.625rem; /* 10px → 0.625rem */
 }
 
 .dropdown-item:hover {
     background-color: #f8f9fa;
     color: #7a1c2e;
-    transform: translateX(2px);
+    transform: translateX(0.125rem); /* 2px → 0.125rem */
 }
 
 .dropdown-item.active {
@@ -302,9 +352,13 @@ body {
     color: white;
 }
 
-/* ===== DROPDOWN ICON ===== */
+/* =========================================== */
+/* DROPDOWN ICON - Icon in toggle */
+/* Penjelasan: Margin dan transisi. Untuk pemula: Inline-flex untuk centering. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .dropdown-icon {
-    margin-left: 6px;
+    margin-left: 0.375rem; /* 6px → 0.375rem */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -312,52 +366,58 @@ body {
 }
 
 .dropdown-icon svg {
-    width: 12px;
-    height: 12px;
+    width: 0.75rem; /* 12px → 0.75rem */
+    height: 0.75rem;
     fill: currentColor;
 }
 
 .dropdown-toggle:hover .dropdown-icon svg {
-    fill: #ffb300; /* Golden accent on hover */
+    fill: #ffb300;
 }
 
-/* ===== CARD GRID ANIMATION ===== */
+/* =========================================== */
+/* CARD GRID ANIMATION - Card grid layout */
+/* Penjelasan: Grid dengan transisi margin. Untuk pemula: Template-columns untuk kolom responsif. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    margin-top: 50px;
+    gap: 1.5625rem; /* 25px → 1.5625rem */
+    margin-top: 3.125rem; /* 50px → 3.125rem */
     position: relative;
-    z-index: 1; /* Lower than dropdown z-index */
-    transition: margin-top 0.3s ease; /* Smooth animation for card movement */
+    z-index: 1;
+    transition: margin-top 0.3s ease;
 }
 
-/* Animation state when dropdown is active */
 .card-grid.dropdown-active {
-    margin-top: 180px; /* Default space, will be overridden by JS */
+    margin-top: 11.25rem; /* 180px → 11.25rem */
     transition: margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ===== CARD STYLES (REVISI) ===== */
+/* =========================================== */
+/* CARD STYLES - Cultural card */
+/* Penjelasan: Flex column dengan hover lift. Untuk pemula: Overflow hidden untuk border radius. */
+/* CHANGE_START - Normalisasi unit ke rem. */
+/* CHANGE_END */
 .cultural-card {
     background: white;
-    border-radius: 8px;
+    border-radius: 0.5rem; /* 8px → 0.5rem */
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 0.125rem 0.5rem rgba(0,0,0,0.08); /* 2px/8px → rem */
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
 .cultural-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transform: translateY(-0.1875rem); /* -3px → -0.1875rem */
+    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.12); /* 4px/12px → rem */
 }
 
-/* IMAGE: gunakan full width container agar grid tidak terdistorsi */
 .card-image {
     width: 100%;
-    height: 220px;
+    height: 13.75rem; /* 220px → 13.75rem */
     overflow: hidden;
     background-color: #e0e0e0;
     display: flex;
@@ -376,26 +436,23 @@ body {
     transform: scale(1.05);
 }
 
-/* CARD CONTENT: jangan pakai fixed height; gunakan flex column
-   dan biarkan footer 'mendorong' ke bawah dengan margin-top: auto */
 .card-content {
-    padding: 20px;
+    padding: 1.25rem; /* 20px → 1.25rem */
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 0.75rem; /* 12px → 0.75rem */
 }
 
-/* Left section: Text content area (title and description) */
 .card-text {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.5rem; /* 8px → 0.5rem */
 }
 
 .card-title {
     color: #7a1c2e;
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px → 1.125rem */
     font-weight: 700;
     margin: 0;
 }
@@ -414,52 +471,49 @@ body {
 }
 
 .card-footer {
-    margin-top: auto !important;
-    padding-top: 8px !important;
-    padding-bottom: 7px !important;
-    position: static !important;
-    box-sizing: border-box !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
+    margin-top: auto;
+    padding-top: 0.5rem; /* 8px → 0.5rem */
+    padding-bottom: 0.4375rem; /* 7px → 0.4375rem */
+    position: static;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Rating tetap di kiri */
 .card-rating {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 0.5rem; /* 8px → 0.5rem */
     margin: 0;
 }
 
 .star-rating {
     color: #ffb300;
-    font-size: 16px;
+    font-size: 1rem; /* 16px → 1rem */
 }
 
 .rating-value {
-    font-size: 14px;
+    font-size: 0.875rem; /* 14px → 0.875rem */
     color: #666;
 }
 
-/* ACTIONS: tombol sejajar horizontal */
 .card-actions {
     display: flex;
-    gap: 8px;
+    gap: 0.5rem; /* 8px → 0.5rem */
     align-items: center;
 }
 
-/* TOMBOL: ukuran seragam dan tidak terlalu panjang */
 .action-btn {
     flex: 0 0 auto;
-    width: 72px;
-    height: 34px;
-    padding: 0 8px;
+    width: 4.5rem; /* 72px → 4.5rem */
+    height: 2.125rem; /* 34px → 2.125rem */
+    padding: 0 0.5rem; /* 8px → 0.5rem */
     border: none;
-    border-radius: 4px;
+    border-radius: 0.25rem; /* 4px → 0.25rem */
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 0.75rem; /* 12px → 0.75rem */
     cursor: pointer;
     transition: all 0.18s ease;
     display: inline-flex;
@@ -468,7 +522,6 @@ body {
     box-sizing: border-box;
 }
 
-/* varian warna tombol */
 .read-btn { background-color: #7a1c2e; color: #fff; }
 .review-btn { background-color: #e9ecef; color: #7a1c2e; }
 
@@ -476,71 +529,74 @@ body {
     opacity: 0.9;
 }
 
-/* ===== FIX: SEMBUNYIKAN ICON CLEAR BAWAAN BROWSER ===== */
+/* =========================================== */
+/* FIX: HIDE BROWSER CLEAR ICON - Hide default clear buttons */
+/* Penjelasan: Sembunyikan ikon clear bawaan browser. Untuk pemula: Pseudo-element browser-specific. */
+/* =========================================== */
 input[type="search"]::-webkit-search-cancel-button {
--webkit-appearance: none;
-appearance: none;
-display: none;
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
 }
 
 input[type="search"]::-ms-clear {
-display: none;
+    display: none;
 }
 
 input[type="search"]::-moz-search-cancel-button {
-display: none;
+    display: none;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
-/* Tablet Landscape */
+/* =========================================== */
+/* MEDIA QUERIES - Responsive adjustments */
+/* Penjelasan: Aturan untuk layar lebih kecil. Untuk pemula: Media query ubah layout berdasarkan lebar. */
+/* CHANGE_START - Normalisasi unit ke rem, gabung selector serupa. */
+/* CHANGE_END */
 @media (max-width: 920px) {
     .container {
-        padding: 0 40px;
+        padding: 0 2.5rem; /* 40px → 2.5rem */
     }
     
     .main-nav ul {
-        gap: 25px;
+        gap: 1.5625rem; /* 25px → 1.5625rem */
     }
     
     .search input {
-        width: 180px;
+        width: 11.25rem; /* 180px → 11.25rem */
     }
 }
 
-/* Tablet Portrait */
 @media (max-width: 680px) {
     .main-nav {
         display: none;
     }
     
     .search input {
-        width: 120px;
+        width: 7.5rem; /* 120px → 7.5rem */
     }
 }
 
-/* Tablet View */
 @media (max-width: 1024px) {
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
     .card-grid.dropdown-active {
-        margin-top: 220px; /* Higher for tablet */
+        margin-top: 13.75rem; /* 220px → 13.75rem */
     }
 }
 
-/* Mobile View */
 @media (max-width: 768px) {
     body {
-        padding-top: 72px;
+        padding-top: 4.5rem; /* 72px → 4.5rem */
     }
     
     .site-header {
-        height: 72px;
+        height: 4.5rem; /* 72px → 4.5rem */
     }
     
     .container {
-        padding: 0 20px;
+        padding: 0 1.25rem; /* 20px → 1.25rem */
     }
     
     .page-header {
@@ -552,11 +608,11 @@ display: none;
         width: 100%;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 0.625rem; /* 10px → 0.625rem */
     }
     
     .dropdown-container {
-        width: calc(50% - 5px);
+        width: calc(50% - 0.3125rem); /* 5px → 0.3125rem */
     }
     
     .dropdown-toggle {
@@ -575,57 +631,55 @@ display: none;
     }
     
     .card-grid.dropdown-active {
-        margin-top: 250px; /* Higher for mobile */
+        margin-top: 15.625rem; /* 250px → 15.625rem */
     }
     
     .main-content {
-        padding: 40px 20px 80px;
+        padding: 2.5rem 1.25rem 5rem; /* 40px/20px/80px → rem */
     }
 }
 
-/* Small Mobile */
 @media (max-width: 480px) {
     .site-header {
-        height: 60px;
+        height: 3.75rem; /* 60px → 3.75rem */
     }
     
     body {
-        padding-top: 60px;
+        padding-top: 3.75rem; /* 60px → 3.75rem */
     }
     
     .brand-icon {
-        width: 100px;
-        height: 50px;
+        width: 6.25rem; /* 100px → 6.25rem */
+        height: 3.125rem; /* 50px → 3.125rem */
     }
     
     .actions {
-        gap: 16px;
+        gap: 1rem; /* 16px → 1rem */
     }
     
     .main-content {
-        padding: 30px 20px 60px;
+        padding: 1.875rem 1.25rem 3.75rem; /* 30px/20px/60px → rem */
     }
     
     .page-title {
-        font-size: 24px;
+        font-size: 1.5rem; /* 24px → 1.5rem */
     }
     
     .dropdown-container {
         width: 100%;
     }
     
-    .dropdown-toggle,
     .dropdown-toggle {
-        padding: 6px 12px;
-        font-size: 13px;
+        padding: 0.375rem 0.75rem; /* 6px/12px → rem */
+        font-size: 0.8125rem; /* 13px → 0.8125rem */
     }
     
     .card-grid.dropdown-active {
-        margin-top: 300px; /* Highest for small mobile */
+        margin-top: 18.75rem; /* 300px → 18.75rem */
     }
     
     .card-image {
-        height: 200px;
+        height: 12.5rem; /* 200px → 12.5rem */
     }
     
     .card-actions {
