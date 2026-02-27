@@ -1,19 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Bahtera Edukasi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edukasi Budaya Nusantara - Tim Kami</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="landingpage02.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="timkami02.css">
 </head>
 <body>
+  <!-- Navbar -->
   <header class="site-header">
-    <div class="container header-inner navbar-container">
+    <div class="container header-inner">
       <a class="brand" href="#home">
-        <img class="brand-icon" src="assetLandingPage/LogoBahtera.png" alt="Bahtera Edukasi" width="120" height="50">
+        <img class="brand-icon" src="assettimkami/LogoBahtera(SVG).svg" alt="Bahtera Edukasi" width="120" height="70">
       </a>
-
       <!-- HAMBURGER TOGGLE -->
       <input type="checkbox" id="nav-toggle" hidden>
       <label for="nav-toggle" class="hamburger">
@@ -23,14 +26,13 @@
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </label>
-
       <nav class="main-nav" aria-label="Utama">
         <ul>
-          <li><a href="#home">Beranda</a></li>
-          <li><a href="#footer">Tentang</a></li>
-          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="../LandingPage/LandingPage02.html">Beranda</a></li>
+          <li><a href="../timkami(FIX_QONITA)/timkami.html" class="active">Tentang</a></li>
+          <li><a href="../katalog (FIX_QONITA)/katalog.html">Katalog</a></li>
         </ul>
-        
+      
         <!-- MOBILE ACTIONS (Search & Language dalam menu hamburger) -->
         <div class="mobile-actions">
           <form class="search-form" role="search" action="#" method="get">
@@ -43,7 +45,6 @@
               <input type="search" placeholder="Cari..." aria-label="Cari">
             </label>
           </form>
-
           <div class="lang-menu">
             <input type="checkbox" id="lang-toggle-mobile" hidden>
             <label for="lang-toggle-mobile" class="lang-btn" aria-haspopup="true" aria-expanded="false">
@@ -56,7 +57,6 @@
               </span>
               ID
             </label>
-
             <div class="lang-dropdown" role="menu" aria-label="Pilih Bahasa">
               <a href="#" class="lang-option" role="menuitem">
                 <span class="opt-flag">
@@ -82,7 +82,6 @@
           </div>
         </div>
       </nav>
-
       <div class="actions">
         <form class="search-form" role="search" action="#" method="get">
           <label class="search">
@@ -99,7 +98,6 @@
             </button>
           </label>
         </form>
-
         <div class="lang-menu">
           <input type="checkbox" id="lang-toggle" hidden>
           <label for="lang-toggle" class="lang-btn" aria-haspopup="true" aria-expanded="false">
@@ -116,7 +114,6 @@
               <path d="M1 1l4 3 4-3" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </label>
-
           <div class="lang-dropdown" role="menu" aria-label="Pilih Bahasa">
             <a href="#" class="lang-option" role="menuitem">
               <span class="opt-flag">
@@ -150,119 +147,241 @@
     </div>
   </header>
 
-  <!-- Konten lainnya tetap sama -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Kenali Budaya Nusantara Dengan Cara yang Lebih Mudah dan Menarik</h1>
-      <p>Jelajahi kekayaan budaya Nusantara, dari keindahan pakaian adat hingga cita rasa kuliner tradisional yang mengagumkan. Temukan cerita, seni, dan tradisi yang menjadi bagian dari jiwa bangsa kita.</p>
-      <a href="#about" class="btn-explore">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19.512 12.566a1.4 1.4 0 0 1-.32.69a1.5 1.5 0 0 1-.64.42l-4.48.85l2.24 4.23c.088.137.15.29.18.45c.035.185.035.375 0 .56a1.3 1.3 0 0 1-.23.51c-.112.157-.255.29-.42.39l-1.69.88a1.36 1.36 0 0 1-.65.16q-.21 0-.41-.06a1.42 1.42 0 0 1-.82-.68l-2.25-4.27l-3.21 3.08a1.4 1.4 0 0 1-1.55.24a1.43 1.43 0 0 1-.79-1.33V3.696a1.5 1.5 0 0 1 .19-.71a1.35 1.35 0 0 1 .54-.52a1.39 1.39 0 0 1 1.43.06l12.3 8.66c.21.153.376.36.48.6c.107.245.141.515.1.78"/></svg>
-        Jelajahi
-      </a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Tim Kami</h1>
+      <p class="hero-subtitle">Bahtera ini berlayar bukan hanya membawa pengetahuan, tetapi juga harapan untuk masa depan budaya Nusantara.</p>
     </div>
   </section>
 
-  <section id="about" class="info-section">
-    <div class="container">
-      <div class="info-image" style="background-image: url('assetLandingPage/RumahGadang.png');"></div>
-      <div class="info-shape">
-        <div class="info-content">
-          <h1>Apa itu rumah adat ?</h1>
-          <p>
-          Rumah adat adalah bangunan tradisional warisan
-          leluhur yang mencerminkan budaya, nilai, dan cara
-          hidup masyarakat. Dibangun dari bahan alami dan
-          beragam bentuk sesuai lingkungan serta tradisi
-          daerah, rumah adat berfungsi sebagai hunian, pusat
-          kegiatan adat, sekaligus simbol identitas dan
-          penghormatan kepada leluhur.
-          </p>
-          <a href="rumah.html" class="btn-rumah">
-            <img src="assetLandingPage/btn-rumah.svg" alt="Rumah" class="btn-icon">
-            RUMAH
-          </a>
-        </div>
+  <!-- Sticky Tab Navigation -->
+  <div class="sticky-container">
+    <nav class="tab-navigation">
+      <div class="container">
+        <ul class="tab-list">
+          <li class="tab-item active"><a href="#developer">Tim Website Developer</a></li>
+          <li class="tab-item"><a href="#admin">Tim Admin Web</a></li>
+          <li class="tab-item"><a href="#about">Tentang Kami</a></li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </nav>
+  </div>
 
-  <section id="info2" class="info-section">
-    <div class="container">
-      <div class="info-shape">
-        <div class="info-content right">
-          <h1>Apa itu tarian tradisional ?</h1>
-          <p>
-          Tari tradisional adalah warisan budaya yang
-          diwariskan turun-temurun dengan gerakan, kostum,
-          sebagai hiburan, tari tradisional berperan dalam
-          upacara adat, perayaan, hingga ungkapan doa dan
-          syukur. Tarian ini mencerminkan kekayaan budaya,
-          memperkuat identitas bangsa, serta menanamkan
-          nilai luhur kepada generasi muda.
-          </p>
-          <a href="tarian.html" class="btn-tarian">
-            <img src="assetLandingPage/btn-trn.svg" alt="Tari" class="btn-icon">
-            TARIAN
-          </a>
+  <main>
+    <!-- Developer Team Section -->
+    <section id="developer" class="team-section">
+      <div class="container">
+        <h2 class="section-title">Tim Website Developer</h2>
+        
+        <div class="team-grid">
+          <!-- Row 1 -->
+          <div class="team-card">
+            <img src="assettimkami/Rizky Pratama.png" alt="Rizky Pratama" class="card-img">
+            <div class="card-content">
+              <h3>Rizky Pratama</h3>
+              <p>Frontend Developer</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Andini Saraswati.png" alt="Andini Saraswati" class="card-img">
+            <div class="card-content">
+              <h3>Andini Saraswati</h3>
+              <p>UI/UX Designer</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Fahmi Nurhadi.png" alt="Fahmi Nurhadi" class="card-img">
+            <div class="card-content">
+              <h3>Fahmi Nurhadi</h3>
+              <p>Backend Developer</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Siti Rahmawati.png" alt="Siti Rahmawati" class="card-img">
+            <div class="card-content">
+              <h3>Siti Rahmawati</h3>
+              <p>Web Designer</p>
+            </div>
+          </div>
+          
+          <!-- Row 2 -->
+          <div class="team-card">
+            <img src="assettimkami/Intan Maharani.png" alt="Intan Maharani" class="card-img">
+            <div class="card-content">
+              <h3>Intan Maharani</h3>
+              <p>Frontend Engineer</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Dian Saputra.png" alt="Dian Saputra" class="card-img">
+            <div class="card-content">
+              <h3>Dian Saputra</h3>
+              <p>Fullstack Developer</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Bagas Nugroho.png" alt="Bagas Nugroho" class="card-img">
+            <div class="card-content">
+              <h3>Bagas Nugroho</h3>
+              <p>Junior Web Developer</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/M. Arief Hidayat.png" alt="M. Arief Hidayat" class="card-img">
+            <div class="card-content">
+              <h3>M. Arief Hidayat</h3>
+              <p>DevOps Engineer</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="info-image" style="background-image: url('assetLandingPage/tarikck.png');"></div>
-    </div>
-  </section>
+    </section>
 
-  <section id="info3" class="info-section">
-    <div class="container">
-      <div class="info-image" style="background-image: url('assetLandingPage/apaitupakaiantrdsl.jpeg');"></div>
-      <div class="info-shape">
-        <div class="info-content">
-          <h1>Apa itu pakaian tradisional ?</h1>
-          <p>
-          Pakaian tradisional adalah warisan budaya yang
-          mencerminkan identitas, adat, dan nilai
-          masyarakat melalui motif, warna, serta bentuknya.
-          Selain berfungsi sebagai busana, pakaian ini
-          dipakai dalam upacara adat, perayaan, hingga
-          simbol kehormatan dan kekayaan budaya bangsa.
-          </p>
-          <a href="pakaian.html" class="btn-pakaian">
-            <img src="assetLandingPage/btn-pkn.svg" alt="Pakaian" class="btn-icon">
-            PAKAIAN
-          </a>
+    <!-- Admin Team Section -->
+    <section id="admin" class="team-section">
+      <div class="container">
+        <h2 class="section-title">Tim Admin Web</h2>
+        
+        <div class="team-grid">
+          <!-- Row 1 -->
+          <div class="team-card">
+            <img src="assettimkami/Nurul Azzahra.png" alt="Nurul Azzahra" class="card-img">
+            <div class="card-content">
+              <h3>Nurul Azzahra</h3>
+              <p>Data Entry Admin</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Putri Ramadhani.png" alt="Putri Ramadhani" class="card-img">
+            <div class="card-content">
+              <h3>Putri Ramadhani</h3>
+              <p>Konten & Artikel Admin</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Aditya Kurniawan.png" alt="Aditya Kurniawan" class="card-img">
+            <div class="card-content">
+              <h3>Aditya Kurniawan</h3>
+              <p>Website Maintenance Admin</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Tasya Amalia.png" alt="Tasya Amalia" class="card-img">
+            <div class="card-content">
+              <h3>Tasya Amalia</h3>
+              <p>Media & File Manager</p>
+            </div>
+          </div>
+          
+          <!-- Row 2 -->
+          <div class="team-card">
+            <img src="assettimkami/Eka Wibowo.png" alt="Eka Wibowo" class="card-img">
+            <div class="card-content">
+              <h3>Eka Wibowo</h3>
+              <p>Web Content Admin</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Citra Dewi.png" alt="Citra Dewi" class="card-img">
+            <div class="card-content">
+              <h3>Citra Dewi</h3>
+              <p>Customer Inquiry Admin</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Gilang Mahardika.png" alt="Gilang Mahardika" class="card-img">
+            <div class="card-content">
+              <h3>Gilang Mahardika</h3>
+              <p>SEO Content Admin</p>
+            </div>
+          </div>
+          
+          <div class="team-card">
+            <img src="assettimkami/Ayu Kartika.png" alt="Ayu Kartika" class="card-img">
+            <div class="card-content">
+              <h3>Ayu Kartika</h3>
+              <p>Dokumentasi & Arsip Admin</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="info4" class="info-section">
-    <div class="container">
-      <div class="info-shape">
-        <div class="info-content right">
-          <h1>Apa itu makanan tradisional ?</h1>
-          <p>
-          Makanan khas daerah adalah warisan budaya
-          yang lahir dari kekayaan alam dan tradisi setiap
-          wilayah. Dengan cita rasa, bahan, dan cara masak
-          yang unik, makanan ini mencerminkan identitas
-          masyarakat. Selain sebagai santapan, ia hadir
-          dalam upacara dan perayaan sebagai simbol
-          syukur dan kebersamaan, sekaligus memperkuat
-          jati diri bangsa.
-          </p>
-          <a href="makanan.html" class="btn-makanan">
-            <img src="assetLandingPage/btn-mkn.svg" alt="makanan" class="btn-icon">
-            MAKANAN
-          </a>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="about-card">
+          <div class="about-header">
+            <h2>Tentang Kami</h2>
+          </div>
+          
+          <div class="about-content">
+            <h3>Tentang Kami – Edukasi Budaya Nusantara</h3>
+            <p>Edukasi Budaya Nusantara adalah platform digital yang hadir untuk memperkenalkan, melestarikan, dan merayakan kekayaan budaya Indonesia. Kami percaya bahwa warisan budaya bukan hanya peninggalan, tetapi juga identitas yang harus dijaga dan diwariskan kepada generasi berikutnya.</p>
+            <p>Website ini dikembangkan oleh tim muda kreatif dengan tujuan menjadi sumber informasi terpercaya mengenai rumah adat, pakaian tradisional, tarian, makanan khas, dan kekayaan budaya lain dari berbagai daerah di Nusantara.</p>
+            <p>Melalui fitur katalog budaya, pencarian, kategori interaktif, ulasan, hingga opsi bahasa (Indonesia – Inggris), kami berkomitmen memberikan pengalaman belajar budaya yang mudah diakses, menyenangkan, dan relevan bagi pelajar, guru, masyarakat umum, maupun khalayak internasional.</p>
+            <p>Kami berharap hadirnya Edukasi Budaya Nusantara dapat menumbuhkan rasa cinta, kebanggaan, serta kepedulian untuk terus melestarikan budaya bangsa.</p>
+          </div>
+        </div>
+        
+        <div class="about-card">
+          <div class="about-header">
+            <h2>Visi</h2>
+          </div>
+          
+          <div class="about-content">
+            <p>Menjadi platform edukasi budaya digital yang terpercaya, interaktif, dan mudah diakses, untuk memperkenalkan serta melestarikan kekayaan budaya Nusantara kepada generasi muda, masyarakat luas, dan dunia internasional.</p>
+          </div>
+        </div>
+        
+        <div class="about-card">
+          <div class="about-header">
+            <h2>Misi</h2>
+          </div>
+          
+          <div class="about-content">
+            <ol class="mission-list">
+              <li>Menyediakan katalog budaya Nusantara yang lengkap dan akurat, meliputi rumah adat, pakaian tradisional, tarian, dan makanan khas daerah.</li>
+              <li>Memanfaatkan teknologi digital agar informasi budaya mudah diakses kapan saja dan di mana saja.</li>
+              <li>Menghadirkan konten interaktif berupa ulasan, rating, dan fitur pencarian untuk meningkatkan keterlibatan pengguna.</li>
+              <li>Mendorong generasi muda mencintai budaya lokal, dengan tampilan yang sederhana, menarik, dan sesuai kebutuhan pelajar.</li>
+              <li>Memperluas jangkauan budaya Nusantara ke masyarakat internasional melalui fitur multi-bahasa (Indonesia – Inggris).</li>
+              <li>Berperan dalam pelestarian budaya dengan menyajikan sumber informasi yang kredibel dari Kemendikbudristek, UNESCO, dan DAPOBUD.</li>
+            </ol>
+          </div>
+        </div>
+        
+        <div class="about-card">
+          <div class="about-header">
+            <h2>Pesan & Harapan</h2>
+          </div>
+          
+          <div class="about-content">
+            <p>Sebagai generasi muda, kami menyadari bahwa budaya Nusantara adalah warisan yang sangat berharga dan tidak ternilai. Namun, di tengah perkembangan zaman dan teknologi, banyak anak bangsa yang mulai kurang mengenal kekayaan budayanya sendiri.</p>
+            <p>Melalui website Edukasi Budaya Nusantara, kami ingin menghadirkan sebuah ruang digital yang mudah diakses, interaktif, dan menyenangkan untuk belajar budaya. Harapan kami, platform ini dapat menjadi jembatan bagi pelajar, guru, maupun masyarakat umum untuk mengenal, mencintai, dan melestarikan warisan budaya Indonesia.</p>
+            <p>Kami percaya bahwa dengan menjaga dan melestarikan budaya, kita sedang menjaga identitas bangsa dan memperkuat rasa persatuan. Semoga website ini bermanfaat, menginspirasi, serta mampu menjadi langkah kecil menuju generasi yang lebih peduli dan bangga terhadap budaya Nusantara.</p>
+          </div>
         </div>
       </div>
-      <div class="info-image" style="background-image: url('assetLandingPage/rendang.jpeg');"></div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer id="footer" class="footer">
     <div class="footer__container">
       <div class="footer__column footer__column--left">
         <h2 class="footer__title">Kontak & Sosial Media</h2>
-
         <div class="contact__item">
           <div class="contact__icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -274,7 +393,6 @@
             <span class="contact__value">@BahteraBudaya</span>
           </div>
         </div>
-
         <div class="contact__item">
           <div class="contact__icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -286,7 +404,6 @@
             <span class="contact__value">085649523868</span>
           </div>
         </div>
-
         <div class="contact__item">
           <div class="contact__icon">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
@@ -298,11 +415,10 @@
             <span class="contact__value">Malang, Indonesia</span>
           </div>
         </div>
-
         <div class="social__container">
           <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-btn social-btn-tiktok">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+              <path d="M12.525.02c1.31-.02 1.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
             </svg>
           </a>
           <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-btn social-btn-instagram">
@@ -317,14 +433,12 @@
           </a>
         </div>
       </div>
-
       <div class="footer__column footer__column--right">
         <h2 class="footer__title">Navigasi Link</h2>
         <nav class="nav__links">
-          <a href="syarat-ketentuan.html" class="nav__link">Syarat dan Ketentuan</a>
-          <a href="kebijakan-privasi.html" class="nav__link">Kebijakan Privasi</a>
+          <a href="../syaratdanketentuan(FIX_QONITA)/syarat_dan_ketentuan.html" class="nav__link">Syarat dan Ketentuan</a>
+          <a href="../Kebijakan Privasi(FIX_QONITA)/navigasilink.html" class="nav__link">Kebijakan Privasi</a>
         </nav>
-
         <h2 class="footer__title footer__title--faq">FAQ (Pertanyaan Umum)</h2>
         <div class="faq__container">
           <details class="faq__item">
@@ -336,7 +450,6 @@
               <p>Edukasi Budaya Nusantara adalah platform digital berbasis web yang bertujuan memperkenalkan, melestarikan, dan menyebarkan informasi tentang kekayaan budaya Indonesia. Website ini menyajikan katalog budaya seperti rumah adat, tarian, pakaian tradisional, dan makanan khas daerah, yang dapat diakses oleh pelajar, guru, masyarakat umum, hingga internasional.</p>
             </div>
           </details>
-
           <details class="faq__item">
             <summary class="faq__question">
               Dari mana sumber Informasi budaya di situs ini diambil?
@@ -351,7 +464,6 @@
               </ul>
             </div>
           </details>
-
           <details class="faq__item">
             <summary class="faq__question">
               Bagaimana cara menghubungi tim pengelola situs ini?
@@ -364,19 +476,18 @@
         </div>
       </div>
     </div>
-
     <div class="footer__bottom">
-      <hr style="border: none; border-top: 1px solid #D3D3D3; width: 100%; margin: 15px 0;">
-      <p class="copyright">© 2025 Bahtera Budaya. Hak Cipta Dilindungi.</p>
+      <p align="center" class="copyright">© 2025 Bahtera Budaya. Hak Cipta Dilindungi.</p>
     </div>
   </footer>
 
   <script>
-    // Script untuk menutup menu hamburger saat link diklik
     document.addEventListener('DOMContentLoaded', function() {
+      // Navbar functionality
       const navToggle = document.getElementById('nav-toggle');
       const navLinks = document.querySelectorAll('.main-nav a');
-      
+    
+      // Tutup menu hamburger saat link diklik (mobile)
       navLinks.forEach(link => {
         link.addEventListener('click', () => {
           if (window.innerWidth <= 680) {
@@ -384,7 +495,7 @@
           }
         });
       });
-      
+    
       // Tutup dropdown language saat klik di luar
       document.addEventListener('click', function(e) {
         if (!e.target.closest('.lang-menu')) {
@@ -392,104 +503,147 @@
           document.getElementById('lang-toggle-mobile').checked = false;
         }
       });
+      // Clear search functionality
+      const searchInput = document.getElementById('searchInput');
+      const searchClear = document.querySelector('.search-clear');
+    
+      if (searchInput && searchClear) {
+        searchInput.addEventListener('input', function() {
+          if (this.value.length > 0) {
+            searchClear.style.opacity = '1';
+            searchClear.style.pointerEvents = 'auto';
+          } else {
+            searchClear.style.opacity = '0';
+            searchClear.style.pointerEvents = 'none';
+          }
+        });
+        searchClear.addEventListener('click', function() {
+          searchInput.value = '';
+          this.style.opacity = '0';
+          this.style.pointerEvents = 'none';
+        });
+      }
+
+      // Existing functionality for tabs and sticky
+      const tabItems = document.querySelectorAll('.tab-item');
+      const sections = document.querySelectorAll('.team-section, .about-section');
+      
+      // Set active tab on click
+      tabItems.forEach(item => {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          tabItems.forEach(item => item.classList.remove('active'));
+          this.classList.add('active');
+          
+          const targetId = this.querySelector('a').getAttribute('href');
+          const targetSection = document.querySelector(targetId);
+          
+          if(targetSection) {
+            window.scrollTo({
+              top: targetSection.offsetTop - 72, // Adjusted for fixed tab navigation
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Update active tab on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            
+            tabItems.forEach(item => {
+              item.classList.remove('active');
+              if(item.querySelector('a').getAttribute('href') === `#${id}`) {
+                item.classList.add('active');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-72px 0px 0px 0px', // Adjusted for fixed tab navigation
+        threshold: 0.1
+      });
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Update navbar active state on scroll
+      window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) {
+          document.querySelector('.site-header').style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+        } else {
+          document.querySelector('.site-header').style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.1)';
+        }
+      });
+
+      // Sticky tab navigation behavior
+      const stickyContainer = document.querySelector('.sticky-container');
+      const heroSection = document.querySelector('.hero');
+      
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > heroSection.offsetHeight + 72) {
+          stickyContainer.style.position = 'fixed';
+          stickyContainer.style.top = '72px'; // Position below navbar
+          stickyContainer.style.width = '100%';
+          stickyContainer.style.zIndex = '999';
+        } else {
+          stickyContainer.style.position = 'sticky';
+          stickyContainer.style.top = '0';
+        }
+      });
+
+      // Footer functionality
+      // FAQ Accordion functionality
+      const faqItems = document.querySelectorAll('.faq__item');
+    
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq__question');
+      
+        question.addEventListener('click', function() {
+          // Close other open FAQ items
+          if (!item.open) {
+            faqItems.forEach(otherItem => {
+              if (otherItem !== item && otherItem.open) {
+                otherItem.open = false;
+              }
+            });
+          }
+        });
+      });
+      // Smooth scroll for navigation links
+      const navLinksFooter = document.querySelectorAll('.nav__link');
+    
+      navLinksFooter.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetUrl = this.getAttribute('href');
+        
+          // Add smooth transition effect
+          document.body.style.opacity = '0.7';
+          document.body.style.transition = 'opacity 0.3s ease';
+        
+          setTimeout(() => {
+            window.location.href = targetUrl;
+          }, 300);
+        });
+      });
+      // Social media button hover effects
+      const socialButtons = document.querySelectorAll('.social-btn');
+    
+      socialButtons.forEach(button => {
+        button.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-3px) scale(1.05)';
+        });
+      
+        button.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
     });
   </script>
-
-  <!-- Script lainnya tetap sama -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Inisialisasi Intersection Observer
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
-  
-  // Handler untuk mengaktifkan animasi
-  const animateOnScroll = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        animateOnScroll.unobserve(entry.target); // Hentikan observasi setelah animasi
-      }
-    });
-  }, observerOptions);
-  
-  // Elemen-elemen yang akan dianimasikan
-  const animatedElements = [
-    // Hero section
-    '.hero-content h1',
-    '.hero-content p',
-    '.btn-explore',
-    
-    // About section
-    '#about .info-content h1',
-    '#about .info-content p',
-    '.btn-rumah',
-    '#about .info-image',
-    
-    // Info2 section
-    '#info2 .info-content h1',
-    '#info2 .info-content p',
-    '.btn-tarian',
-    '#info2 .info-image',
-    
-    // Info3 section
-    '#info3 .info-content h1',
-    '#info3 .info-content p',
-    '.btn-pakaian',
-    '#info3 .info-image',
-    
-    // Info4 section
-    '#info4 .info-content h1',
-    '#info4 .info-content p',
-    '.btn-makanan',
-    '#info4 .info-image',
-    
-    // Footer elements
-    '.footer__title',
-    '.contact__item',
-    '.social__container',
-    '.nav__links',
-    '.faq__item'
-  ];
-  
-  // Menambahkan class animasi dan mengamati elemen
-  animatedElements.forEach(selector => {
-    document.querySelectorAll(selector).forEach(element => {
-      // Menambahkan class animasi berdasarkan jenis elemen
-      if (element.classList.contains('btn-rumah') || 
-          element.classList.contains('btn-tarian') || 
-          element.classList.contains('btn-pakaian') || 
-          element.classList.contains('btn-makanan') ||
-          element.classList.contains('btn-explore')) {
-        element.classList.add('bounce');
-      } 
-      else if (element.classList.contains('info-image')) {
-        element.classList.add('scale-in');
-      }
-      else if (element.tagName === 'H1' || element.tagName === 'H2') {
-        element.classList.add('slide-up');
-      }
-      else {
-        element.classList.add('fade-in');
-      }
-      
-      // Mengamati elemen
-      animateOnScroll.observe(element);
-    });
-  });
-  
-  // Menambahkan class visible langsung pada elemen yang sudah terlihat saat load
-  setTimeout(() => {
-    document.querySelectorAll('.fade-in, .slide-up, .scale-in, .bounce').forEach(element => {
-      const rect = element.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        element.classList.add('visible');
-        animateOnScroll.unobserve(element);
-      }
-    });
-  }, 300);
-});
-</script>
 </body>
 </html>

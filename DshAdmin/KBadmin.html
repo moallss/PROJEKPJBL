@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        /* Reset default browser*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-left: 200px;
+            background-color: #EBD7C1;
+        }
+
+        header {
+            background: #6D2323;
+            color: #fff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            justify-content: flex-end;
+
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header ul li {
+            margin-left: 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        #notification-bell img {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #6D2323;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar ul li {
+            display: block !important;
+            margin-bottom: 5px;
+        }
+
+        /* PERBAIKAN 3: Atur tautan agar memenuhi lebar <li> */
+        .sidebar ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #903030;
+        }
+
+        .nav_logo {
+            padding-bottom: 40px;
+            height: auto;
+        }
+
+        h1 {
+            margin-top: 47px;
+            margin-bottom: 20px;
+            color: #6D2323;
+            font-size: 30px;
+        }
+
+        /* Judul Utama "Dasbhoard" */
+        h1.page-title {
+            font-size: 38px;
+            font-weight: bold;
+            color: #6D2323;
+            margin-bottom: 30px;
+        }
+
+        /* ======================== */
+        /* == HEADER ACTION BUTTON == */
+        /* ======================== */
+
+        /* Agar Judul dan Tombol Tambah berada di baris yang sama */
+        .content-wrappert {
+            display: flex;
+            flex-wrap: wrap;
+            /* Izinkan elemen turun ke baris baru */
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 40px 40px 40px;
+        }
+
+        .page-title {
+            /* Judul tetap di kiri */
+            margin-right: auto;
+        }
+
+        .header-action {
+            margin-bottom: 30px;
+        }
+
+        .add-content-btn {
+            background-color: #6D2323;
+            /* Merah Marun Sidebar */
+            color: white;
+            padding: 10px 20px;
+            text-align: right;
+            margin-top:100px; ;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .add-content-btn:hover {
+            background-color: #903030;
+        }
+
+        /* ======================== */
+        /* == BARIS FILTER MERAH == */
+        /* ======================== */
+        .filter-bar {
+            /* Ambil lebar penuh */
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #6D2323;
+            /* Latar belakang Merah Marun */
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .search-input {
+            background-color: #903030;
+            /* Latar belakang input lebih gelap dari container */
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 200px;
+            /* Lebar pencarian */
+        }
+
+        /* Placeholder warna putih di input */
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .filter-dropdown {
+            background-color: #903030;
+            /* Latar belakang dropdown lebih gelap */
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            /* Hilangkan panah default jika perlu (gunakan background-image) */
+            appearance: none;
+
+        }
+
+        /* Style spesifik untuk dropdown 'Urutkan' agar terlihat seperti tombol */
+        .sort-dropdown {
+            background-color: #6D2323;
+            border: 1px solid #fff;
+        }
+
+
+        /* ======================== */
+        /* == TABEL DATA (List Konten) == */
+        /* ======================== */
+
+        .data-table-container {
+            width: 100%;
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+           
+        }
+
+        .data-table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .data-table-container table thead th {
+            /* Gaya header tabel */
+            padding: 12px 10px;
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .data-table-container table tbody td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Indikator Status (Lingkaran Kecil) */
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .status-active {
+            background-color: #4CAF50;
+            /* Hijau */
+        }
+
+        /* Anda bisa menambahkan status lain (e.g., pending/merah, review/kuning) */
+
+        .action-menu {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: #333;
+        }
+    </style>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" id="notification-bell">
+                        <img src="aset/bell.png" alt="Notifikasi">
+                    </a></li>
+                <div id="notification-dropdown" class="hidden">
+                </div>
+                <li class="profile">
+                    <img src="aset/pp.jfif" alt="foto-profile" class="profile-pic">
+                    <span>Admin</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="sidebar">
+        <div class="sidebarH">
+            <a href="#">
+                <img src="aset/LogoBahtera.png" alt="Logo Bahtera" class="nav_logo">
+            </a>
+        </div>
+        <ul>
+            <li><a href="DCadmin.html"> Dashboard</a></li>
+            <li><a href="KBadmin.html"> Konten Budaya</a></li>
+            <li><a href="URadmin.html"> Ulasan & Rating</a></li>
+            <li><a href="Kadmin.html">Kategori</a></li>
+            <li><a href="Padmin.html">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="content-wrappert">
+    <h1 class="page-title">Manajemen Konten Budaya</h1>
+
+    <div class="header-action">
+        <button class="add-content-btn">+ Tambahkan Konten</button>
+    </div>
+
+    <div class="filter-bar">
+        <div class="filter-group">
+            <input type="text" placeholder="Cari konten..." class="search-input">
+        </div>
+
+        <div class="filter-group">
+            <select class="filter-dropdown">
+                <option>Semua Kategori</option>
+                <option>Rumah Adat</option>
+                <option>Pakaian Adat</option>
+            </select>
+            <select class="filter-dropdown">
+                <option>Semua Provinsi</option>
+                <option>Sumatera Barat</option>
+                <option>Jawa Tengah</option>
+            </select>
+            <select class="filter-dropdown sort-dropdown">
+                <option>Urutkan</option>
+                <option>Terbaru</option>
+                <option>Rating Tertinggi</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="data-table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox"></th>
+                    <th>Judul</th>
+                    <th>Kategori</th>
+                    <th>Provinsi</th>
+                    <th>Rating</th>
+                    <th>Status</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Rumah Gadang</td>
+                    <td>Rumah Adat</td>
+                    <td>Sumatera Barat</td>
+                    <td>⭐⭐⭐⭐⭐ 5.0</td>
+                    <td><span class="status-indicator status-active"></span></td>
+                    <td><button class="action-menu">...</button></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td>Kebaya</td>
+                    <td>Pakaian Adat</td>
+                    <td>Jawa Tengah</td>
+                    <td>⭐⭐⭐⭐⭐ 5.0</td>
+                    <td><span class="status-indicator status-active"></span></td>
+                    <td><button class="action-menu">...</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+</body>
+<script>
+    document.getElementById('notification-bell').addEventListener('click', function (e) {
+        e.preventDefault(); // Mencegah browser scroll ke atas
+        document.getElementById('notification-dropdown').classList.toggle('hidden');
+    });
+</script>
+
+</html>
